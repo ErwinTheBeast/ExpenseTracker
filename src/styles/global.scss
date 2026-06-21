@@ -14,16 +14,51 @@ body {
   line-height: 1.6;
 }
 
-main {
-  display: block;
+#root {
+  min-height: 100vh;
 }
 
-.container {
-  width: min(var(--container), calc(100% - 40px));
-  margin: 0 auto;
-  padding: 48px 0;
+.app-shell {
+  display: flex;
+  min-height: 100vh;
 }
 
-.muted {
-  color: var(--muted);
+.sidebar {
+  flex-shrink: 0;
+  width: var(--sidebar-width);
+  background: var(--bg-sidebar);
+  border-right: 1px solid var(--border);
+}
+
+.app-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.main-content {
+  flex: 1;
+  padding: 32px 40px;
+}
+
+.page-heading {
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+.app-footer {
+  padding: 16px 40px;
+  border-top: 1px solid var(--border);
+  background: var(--bg-alt);
+
+  p {
+    margin: 0;
+    font-size: 0.8125rem;
+    color: var(--muted);
+    text-align: center;
+  }
 }

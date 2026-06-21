@@ -1,8 +1,10 @@
-$bg-primary: #f6f4ef;
-$bg-secondary: #faf9f6;
-$text: #0f172a;
-$text-muted: rgba($text, 0.68);
+$bg-primary: #f0f2f5;
+$bg-secondary: #ffffff;
+$bg-sidebar: #e8eaed;
+$text: #1a1d21;
+$text-muted: rgba($text, 0.55);
 $accent: #6d28d9;
+$border: rgba($text, 0.08);
 
 $font-family-body:
   ui-sans-serif,
@@ -15,11 +17,15 @@ $font-family-body:
   'Apple Color Emoji',
   'Segoe UI Emoji';
 
+$sidebar-width: 240px;
+
 :root {
   --bg: #{$bg-primary};
   --bg-alt: #{$bg-secondary};
+  --bg-sidebar: #{$bg-sidebar};
   --text: rgba($text, 0.92);
   --muted: #{$text-muted};
   --accent: #{$accent};
-  --container: 960px;
+  --border: #{$border};
+  --sidebar-width: #{$sidebar-width};
 }

@@ -1,8 +1,21 @@
 import './styles/global.scss';
 
-export const App = () => (
-  <main className="container">
-    <h1>ExpenseTracker</h1>
-    <p className="muted">Frontend scaffold ready.</p>
-  </main>
-);
+export const App = () => {
+  const year = new Date().getFullYear();
+
+  return (
+    <div className="app-shell">
+      <aside className="sidebar" aria-label="Navigation" />
+
+      <div className="app-body">
+        <main className="main-content">
+          <h1 className="page-heading">Dashboard</h1>
+        </main>
+
+        <footer className="app-footer">
+          <p>&copy; {year} ExpenseTracker. All rights reserved.</p>
+        </footer>
+      </div>
+    </div>
+  );
+};
