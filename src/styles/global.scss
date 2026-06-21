@@ -1,0 +1,29 @@
+@use 'variables' as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: var(--text);
+  background: var(--bg);
+  font-family: $font-family-body;
+  line-height: 1.6;
+}
+
+main {
+  display: block;
+}
+
+.container {
+  width: min(var(--container), calc(100% - 40px));
+  margin: 0 auto;
+  padding: 48px 0;
+}
+
+.muted {
+  color: var(--muted);
+}

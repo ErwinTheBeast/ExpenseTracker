@@ -1,0 +1,59 @@
+name: Node Continuous Integration
+
+on:
+  pull_request:
+  push:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '25'
+      - run: yarn install
+      - run: yarn clean
+      - run: yarn lint
+  typecheck:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '25'
+      - run: yarn install
+      - run: yarn clean
+      - run: yarn typecheck
+  prettier:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '25'
+      - run: yarn install
+      - run: yarn clean
+      - run: yarn prettier
+  test:
+    needs: [lint, typecheck, prettier]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '25'
+      - run: yarn install
+      - run: yarn clean
+      - run: yarn test
+  build:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '25'
+      - run: yarn install
+      - run: yarn clean
+      - run: yarn build
