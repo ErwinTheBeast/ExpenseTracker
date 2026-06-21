@@ -18,6 +18,7 @@ $font-family-body:
   'Segoe UI Emoji';
 
 $sidebar-width: 240px;
+$sidebar-width-collapsed: 56px;
 
 :root {
   --bg: #{$bg-primary};
@@ -28,4 +29,5 @@ $sidebar-width: 240px;
   --accent: #{$accent};
   --border: #{$border};
   --sidebar-width: #{$sidebar-width};
+  --sidebar-width-collapsed: #{$sidebar-width-collapsed};
 }

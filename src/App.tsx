@@ -1,3 +1,4 @@
+import { Sidebar } from './components/Sidebar';
 import './styles/global.scss';
 
 export const App = () => {
@@ -5,7 +6,7 @@ export const App = () => {
 
   return (
     <div className="app-shell">
-      <aside className="sidebar" aria-label="Navigation" />
+      <Sidebar />
 
       <div className="app-body">
         <main className="main-content">

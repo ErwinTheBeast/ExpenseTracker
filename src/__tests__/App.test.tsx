@@ -19,9 +19,9 @@ describe('App', () => {
     ).toBeInTheDocument();
   });
 
-  it('renders an empty sidebar', () => {
+  it('renders the sidebar', () => {
     render(<App />);
 
-    expect(screen.getByLabelText(/navigation/i)).toBeEmptyDOMElement();
+    expect(screen.getByLabelText(/navigation/i)).toBeInTheDocument();
   });
 });
