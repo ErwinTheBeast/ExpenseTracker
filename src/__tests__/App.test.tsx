@@ -24,4 +24,14 @@ describe('App', () => {
 
     expect(screen.getByLabelText(/navigation/i)).toBeInTheDocument();
   });
+
+  it('renders the expense search bar and table', () => {
+    render(<App />);
+
+    expect(screen.getByLabelText(/search expenses/i)).toBeInTheDocument();
+    expect(screen.getByRole('table')).toBeInTheDocument();
+    expect(
+      screen.getByRole('columnheader', { name: /category/i })
+    ).toBeInTheDocument();
+  });
 });
